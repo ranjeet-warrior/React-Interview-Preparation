@@ -2,6 +2,7 @@
   Day 1
  
  1. What is Virtual DOM ?
+
  Ans. As Stated by React team,Virtal DOM is the concept where a virtual representation of Real DOM is kept inside the memory and is synced
       with real DOM by a library such as ReactDOM
       DOM manipulation is an integral part of any web application,but DOM manipulation is quite slow when compared to other operations in 
@@ -9,7 +10,9 @@
       the entire DOM even when small part of DOM changes
       
 2. What is SPA(Single Page Application)
-Ans. A SPA(Single Page Application) is essentiallya web page that interacts with web browser dynamically by rewriting the current webpage
+
+
+Ans. A SPA(Single Page Application) is essentially web page that interacts with web browser dynamically by rewriting the current webpage
      with the data obtained from the webserver.Hence,in Single Page Application,the web page doesnot reload the page during its runtime and
      instead works within a browser.
      
@@ -134,7 +137,44 @@ Ans. Before the introduction of Hooks in React,functional component were called 
   for updating state. we need to first bind addstudent function to this only then, we will be able to use setstate function which is used to
   update state.
                 
-                     
+ 4.What do you mean by state and its use in react?
+ 
+ Ans. The state is a built-in React object that is used to contain data or information about the Component.A Component's state can change
+      over tim, whenever it changes,the Component re-renders.The change in state can happen as a response to user action or system generated
+      events and these changes determine the behaviour of the component and how it will render
+      
+                        class Greeting extends React.component{
+                        state = {
+                        name : "Ranjeet"
+                        };
+                        updateName(){
+                        this.setState({name:"Ranjeet"});
+                        }
+                        render(){
+                        return(
+                        <div>
+                        {this.state.name}
+                        </div>
+                        )
+                        }
+                        }
+  It is used to conatin data or information about the component.                   
+ 
+ 5. What is JSX and why do we need it instead of Js?
+
+Ans. JSX Stands for JavaScript XML. It allows us to write HTML inside JavaScript and place them in the DOM without using functions like
+     appendChild() or createElement().
+     As stated in the official docs of react,JSX provides syntactic sugar for React.createElement() function.
+     Let's understand how JSX works :
+      
+                      const container = ( <div>
+                    <p>This is a text</p> </div>
+                    ); ReactDOM.render(container,rootElement);
+      
+ 6. What is package.json?
+ 
+ Ans. The package.json file is the heart of Node.js system. It is the manifest file of any Node.js project and contains the metadata of the project. The package.json file is the essential part to understand, learn and work with the Node.js. It is the first step to learn about development in Node.js. 
+     
                          
      
      
