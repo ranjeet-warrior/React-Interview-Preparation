@@ -195,4 +195,7 @@ Ans. By using props we can pass data from parent to child
 
 Ans. Lazy loading means that a component or part of code must gets reloaded when it requires.
      
-     
+11.Difference b/w Stateful and stateless Component ?
+
+Ans. In React, a stateful component is a component that holds some state. stateless component,by contrast has no state.
+     Both types of components uses props
