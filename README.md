@@ -174,7 +174,25 @@ Ans. JSX Stands for JavaScript XML. It allows us to write HTML inside JavaScript
  6. What is package.json?
  
  Ans. The package.json file is the heart of Node.js system. It is the manifest file of any Node.js project and contains the metadata of the project. The package.json file is the essential part to understand, learn and work with the Node.js. It is the first step to learn about development in Node.js. 
-     
-                         
+ 
+7. What is differnce between React and React Native ? which one is library or framework?
+
+Ans. React is a Javascript library,supporting both front end web being run on server,for building user interfaces and web applications.It follows concept
+     of reusable components
+    React Native is a mobile framework that makes use of Javascript engines available on the host, allowing to build mobile applications for different
+   platforms (iOS,Androidand Windows Phone) in JavaScript that allows you to use ReactJS to bild reusable components nad communicate with native    components 
+          React is a JavaScript library and React Native is a JavaScript framework
+          
+ 8. What is the package name you are using for routing implementation?
+          
+Ans. BrowserRouter
+
+9. How do you pass data from parent to child?
+
+Ans. By using props we can pass data from parent to child
+
+10 What is lazy loading in react ?
+
+Ans. Lazy loading means that a component or part of code must gets reloaded when it requires.
      
      
