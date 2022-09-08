@@ -39,7 +39,21 @@ EX::
 | Axios has built-in support for download progress. |	Fetch does not support upload progress. |
 ## 17. What is UseState Hook ?(Implementation)
 The React useState Hook allows us to track state in a function component.State generally refers to data or properties that need to be tracking in an application.
-   # for Implementation:please go through src folder --> Data-p2c
+   # Implementation
+       import React, { useState } from 'react';
+
+     function Example() {
+     // Declare a new state variable, which we'll call "count"
+      const [count, setCount] = useState(0);
+      return (
+      <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+    );
+    }
 
 ## 18. What is useEffect Hook ?(Implementation)
 useEffect :It allows us to implement all of the lifecycle hooks from within a single function API.
@@ -63,20 +77,74 @@ useEffect :It allows us to implement all of the lifecycle hooks from within a si
           alert('Hey, Nads here');
           return () => alert('Goodbye Component');
       });
+      import React, { useState, useEffect } from 'react';
+
+       function Example() {
+      const [count, setCount] = useState(0);
+
+      // Similar to componentDidMount and componentDidUpdate:
+      useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+      });
+
+      return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+     );
+     }
 
 ## 19. What is UseReducer Hook ?(Implementation)
 It does very similiar to setState, It's a different way to manage state using Redux Pattern. Instead of updating the state directly, we dispatch actions, that go to a reducer function, and this function figure out, how to compute the next state.
 
-  # for Implementation: please go through src folder --> Hookes Folder. -->UseReducer.js
+  # Implementation: const initialState = {count: 0};
+
+       function reducer(state, action) {
+      switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+      }
+     }
+
+    function Counter() {
+     const [state, dispatch] = useReducer(reducer, initialState);
+     return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+     );
+     }
       
 ## 20. What is UseMemo Hook ?(Implementation)
 The React useMemo Hook returns a memoized value.Think of memoization as caching a value so that it does not need to be recalculated.The useMemo Hook only runs when one of its dependencies update.This can improve performance.
 The useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function. You can learn more about useCallback in the useCallback chapter.
 
-  # please go through src folder --> Hookes Folder. --> UseMemo.js
+      const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 ## 21. What is UseRef Hook ?(Implementation)
 The useRef Hook allows you to persist values between renders.It can be used to store a mutable value that does not cause a re-render when updated.It can be used to access a DOM element directly.
  
-  # for Implementation: please go through src folder --> Hookes Folder. --> UseRef.js
+        function TextInputWithFocusButton() {
+        const inputEl = useRef(null);
+        const onButtonClick = () => {
+       // `current` points to the mounted text input element
+    inputEl.current.focus();
+      };
+      return (
+       <>
+        <input ref={inputEl} type="text" />
+        <button onClick={onButtonClick}>Focus the input</button>
+       </>
+      );
+     }
 
